@@ -1,0 +1,41 @@
+{
+  "name": "toolbox-client",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "webpack serve webpack.config.dev.js",
+    "build": "webpack",
+    "test": "standard"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.15.3",
+    "bootstrap": "5.1.0",
+    "react": "^17.0.2",
+    "react-bootstrap": "^2.0.0-beta.5",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.4",
+    "redux": "^4.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/eslint-parser": "^7.15.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "dotenv-webpack": "^7.0.3",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.2.0",
+    "prop-types": "^15.7.2",
+    "standard": "^16.0.3",
+    "svg-url-loader": "^7.1.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.51.1",
+    "webpack-bundle-analyzer": "^4.4.2",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.0.0"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "toolbox-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "DEBUG=app:* nodemon index",
+    "start": "NODE_ENV=production node src/index",
+    "test": "standard"
+  },
+  "author": "Elías Bobadilla",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^9.1.0",
+    "nodemon": "^2.0.12",
+    "standard": "^16.0.3",
+    "supertest": "^6.1.6"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "yup": "^0.32.9"
+  }
+}
