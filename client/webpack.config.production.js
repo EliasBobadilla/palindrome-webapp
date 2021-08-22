@@ -3,19 +3,22 @@ const Dotenv = require('dotenv-webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: './src/index.js',
+  entry: path.resolve(__dirname, 'src', 'index.js'),
   mode: 'development',
   devtool: 'source-map',
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'dist')
+    },
+    compress: true,
+    port: 3001
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
-    alias: {
-      '@components': path.resolve(__dirname, 'src/components'),
-      '@containers': path.resolve(__dirname, 'src/containers')
-    }
+    extensions: ['.js', '.jsx']
   },
   module: {
     rules: [
@@ -46,10 +49,5 @@ module.exports = {
       filename: './index.html'
     }),
     new Dotenv()
-  ],
-  devServer: {
-    contentBase: path.join(__dirname, '../assets'),
-    compress: true,
-    port: 3005
-  }
+  ]
 }
