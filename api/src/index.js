@@ -22,7 +22,10 @@ log.configure({
 const logger = log.getLogger('default')
 
 const app = express()
+app.use(log.connectLogger(logger, { level: 'info' }))
 app.use(cors())
+
+// Routes
 app.use('/iecho', route)
 app.use(notFoundHandler)
 
