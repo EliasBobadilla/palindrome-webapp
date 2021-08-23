@@ -1,11 +1,18 @@
 class Palindrome {
-  async isPalindrome (value) {
-    const reversed = [...value].reverse().join('')
-    const result = reversed.toLowerCase().replaceAll(' ', '') === value.toLowerCase().replaceAll(' ', '')
-    return {
-      text: reversed,
-      ...(result && { palindrome: true })
-    }
+  /**
+   * Method for validate if a word or sentence is a palindrome
+   * @param {string} value Word o sentence to validate as palindrome
+   * @returns {Promise<object>}
+   */
+  isPalindrome (value) {
+    return new Promise((resolve) => {
+      const reversed = [...value].reverse().join('')
+      const result = reversed.toLowerCase().replaceAll(' ', '') === value.toLowerCase().replaceAll(' ', '')
+      resolve({
+        text: reversed,
+        ...(result && { palindrome: true })
+      })
+    })
   }
 }
 
