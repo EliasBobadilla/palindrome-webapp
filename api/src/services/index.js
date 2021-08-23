@@ -7,7 +7,7 @@ class Palindrome {
   isPalindrome (value) {
     return new Promise((resolve) => {
       const reversed = [...value].reverse().join('')
-      const result = reversed.toLowerCase().replaceAll(' ', '') === value.toLowerCase().replaceAll(' ', '')
+      const result = reversed.toLowerCase().replace(/ /g, '') === value.toLowerCase().replace(/ /g, '')
       resolve({
         text: reversed,
         ...(result && { palindrome: true })

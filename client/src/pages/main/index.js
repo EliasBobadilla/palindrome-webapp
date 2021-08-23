@@ -1,6 +1,6 @@
 import React from 'react'
-import { PalindromeContainer } from '../../containers/palindrome'
-import { SearchContainer } from '../../containers/search'
+import { PalindromeContainer } from '@containers/palindrome'
+import { SearchContainer } from '@containers/search'
 import { DataLayout, Layout, SearchLayout } from './styles'
 
 export const Main = () => (

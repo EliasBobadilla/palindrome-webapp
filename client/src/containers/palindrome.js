@@ -1,5 +1,5 @@
 import React from 'react'
-import { ResultList } from '../components/resultList'
+import { ResultList } from '@components/resultList'
 import { useSelector } from 'react-redux'
 
 export const PalindromeContainer = () => {

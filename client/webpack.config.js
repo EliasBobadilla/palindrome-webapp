@@ -13,6 +13,15 @@ module.exports = {
     compress: true,
     port: 3001
   },
+  resolve: {
+    alias: {
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@containers': path.resolve(__dirname, 'src/containers'),
+      '@config': path.resolve(__dirname, 'src/config'),
+      '@pages': path.resolve(__dirname, 'src/pages'),
+      '@store': path.resolve(__dirname, 'src/store')
+    }
+  },
   module: {
     rules: [
       {
