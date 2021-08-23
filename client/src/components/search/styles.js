@@ -1,17 +1,16 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  max-width: 80%;
+  width: 50%;
   margin: auto;
   display: flex;
   flex-direction: row;
-  border: solid 1px #c3b8b8;
-  border-radius: .5em;
-  padding: .5em;
+  gap: 1.2em;
 `
 
 export const Text = styled.span`
-  font-size: 1.1em;
+  font-size: 1.2em;
+  color: #2b2427;
   margin-right: 1em;
 
 `

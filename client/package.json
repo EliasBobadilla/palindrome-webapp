@@ -4,22 +4,26 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack serve webpack.config.dev.js",
-    "build": "webpack",
+    "dev": "webpack serve",
+    "build": "webpack --config webpack.config.production.js",
     "test": "standard"
   },
   "dependencies": {
     "@babel/runtime": "^7.15.3",
-    "bootstrap": "5.1.0",
+    "@reduxjs/toolkit": "^1.6.1",
+    "bootstrap": "^5.1.0",
+    "css-loader": "^6.2.0",
+    "html-loader": "^2.1.2",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-beta.5",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.4",
-    "redux": "^4.1.1"
+    "redux": "^4.1.1",
+    "style-loader": "^3.2.1",
+    "styled-components": "^5.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
-    "@babel/eslint-parser": "^7.15.0",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
