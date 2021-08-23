@@ -9,12 +9,12 @@ export const SearchContainer = () => {
   const dispatch = useDispatch()
 
   const submit = async (value) => {
-    const response = await fetch(`${process.env.API_URL}/iecho/?text=${value}`)
+    const response = await window.fetch(`${process.env.API_URL}/iecho/?text=${value}`)
     const result = await response.json()
     if (!result) return
 
     const dt = [...data.results]
-    dt.push({ ...result, key: v4() })
+    dt.unshift({ ...result, key: v4() })
     dispatch(setResult(dt))
   }
 

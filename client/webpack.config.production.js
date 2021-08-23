@@ -1,53 +1,44 @@
 const path = require('path')
 const Dotenv = require('dotenv-webpack')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: path.resolve(__dirname, 'src', 'index.js'),
-  mode: 'development',
-  devtool: 'source-map',
-  devServer: {
-    static: {
-      directory: path.join(__dirname, 'dist')
-    },
-    compress: true,
-    port: 3001
-  },
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
-  },
-  resolve: {
-    extensions: ['.js', '.jsx']
-  },
+  entry: path.join(__dirname, 'src', 'index.js'),
+  mode: 'production',
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.?js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react']
+          }
         }
       },
       {
         test: /\.(css|s?css)$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
-      },
-      {
-        test: /\.html$/,
-        use: { loader: 'html-loader' }
-      },
-      {
-        test: /\.mdx$/,
-        use: ['babel-loader', '@mdx-js/loader']
+        use: ['style-loader', 'css-loader']
       }
     ]
   },
   plugins: [
+    new Dotenv(),
     new HtmlWebpackPlugin({
-      template: './assets/index.html',
-      filename: './index.html'
-    }),
-    new Dotenv()
-  ]
+      template: path.join(__dirname, 'assets', 'index.html')
+    })
+  ],
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new CssMinimizerPlugin(),
+      new TerserPlugin({
+        parallel: true,
+        extractComments: true
+      })
+    ]
+  }
 }

@@ -7,10 +7,3 @@ export const Container = styled.div`
   flex-direction: row;
   gap: 1.2em;
 `
-
-export const Text = styled.span`
-  font-size: 1.2em;
-  color: #2b2427;
-  margin-right: 1em;
-
-`

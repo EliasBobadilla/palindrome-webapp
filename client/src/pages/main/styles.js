@@ -16,9 +16,8 @@ export const SearchLayout = styled.div`
 
 export const DataLayout = styled.div`
   width: 80%;
-  height: 70vh;
-  margin: auto;
-  margin-top: 2em;
+  height: 80vh;
+  margin: 2em auto auto;
   border-radius: .5em;
   background-color: #ffffff;
   padding: 1.2em;
